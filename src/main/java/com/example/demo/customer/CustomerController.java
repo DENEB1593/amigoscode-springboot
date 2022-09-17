@@ -18,8 +18,8 @@ public class CustomerController {
     }
 
     @GetMapping
-    public List<Customer> getCustomer() {
-        return customerService.getCustomer();
+    public List<Customer> getCustomers() {
+        return customerService.getCustomers();
     }
 
     @GetMapping(path = "{id}")

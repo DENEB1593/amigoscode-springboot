@@ -3,10 +3,18 @@ package com.example.demo.customer;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+@Entity
+@Table
 public class Customer {
+
+    @Id
     private Long id;
 
     @NotBlank(message = "name is empty")
@@ -27,6 +35,10 @@ public class Customer {
         this.name = name;
         this.password = password;
         this.email = email;
+    }
+
+    public Customer() {
+
     }
 
     public Long getId() {
