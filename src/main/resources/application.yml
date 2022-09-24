@@ -1,0 +1,47 @@
+info:
+    app:
+        description: Master Spring Boot
+        name: Spring Boot Master
+        version: 1.0.0
+    company:
+        name: DENEB1593
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: '*'
+    info:
+        env:
+            enabled: true
+server:
+    error:
+        include-binding-errors: always
+        include-message: always
+        include-stacktrace: ON_PARAM
+    port: 8080
+    servlet:
+        context-path: /
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: ''
+        url: jdbc:h2:mem:testdb
+        username: sa
+    h2:
+        console:
+            enabled: true
+            path: /h2
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        defer-datasource-initialization: true
+        hibernate:
+            ddl:
+                auto: create-drop
+        show-sql: true
+    sql:
+        init:
+            mode: NEVER
